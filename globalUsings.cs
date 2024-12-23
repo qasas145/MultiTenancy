@@ -6,3 +6,4 @@ global using MultiTenancy.Data;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Options;
 global using Microsoft.AspNetCore.Mvc;
+global using MultiTenancy.Configurations;
