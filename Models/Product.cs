@@ -6,6 +6,6 @@ public class Product : IMustHaveTenant
     public string Name{get;set;} = null!;
     public string Descritpion {get;set;} = null!;
     public int Rate{get;set;}
-    public string TenantId {get;set;} = null!;
+    public string? TenantId {get;set;}
 
 }
