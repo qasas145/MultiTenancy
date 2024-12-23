@@ -10,7 +10,7 @@ public class ApplicationDbContext : DbContext
 
     public ApplicationDbContext(ITenantService tenantService) {
         this._tenantService = tenantService;
-        TenantId = _tenantService.GetCurrentTenant().TId;
+        TenantId = _tenantService.GetCurrentTenant()?.TId;
 
     }
     public DbSet<Product> Products{get;set;}

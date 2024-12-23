@@ -22,6 +22,10 @@ foreach (var tenant in options.Tenants)
     using var scope = builder.Services.BuildServiceProvider().CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dbContext.Database.SetConnectionString(connectionString);
+    Console.WriteLine("connection string of {0} is {1}", tenant.Name, connectionString);
+    if (dbContext.Database.GetPendingMigrations().Any()){
+        dbContext.Database.Migrate();
+    }
 }
 
 var app = builder.Build();
